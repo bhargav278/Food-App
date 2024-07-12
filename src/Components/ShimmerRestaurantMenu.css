@@ -1,0 +1,21 @@
+.res-menu-container{
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: center;
+
+}
+.title .shimmer-title{
+    height: 2rem;
+    width: 80%;
+    background-color: rgb(209, 207, 207);
+}
+.sub-div{
+    width: 50%;
+    /* border: 2px solid red; */
+}
+
+.shimmer-details{
+    background-color: rgb(209, 207, 207);
+    box-shadow: none;
+    height: 13rem;
+}

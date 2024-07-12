@@ -1,0 +1,36 @@
+.shimmer-btn{
+    display: block;
+    width: 9rem;
+    height: 2.5rem;
+    background-color: rgb(209, 207, 207);
+    border: none;
+    margin: 0 1rem;
+    border-radius: 0.2rem;
+}
+.shimmer-btn-group{
+ display: flex; 
+ margin: 2rem 0;  
+ justify-content: center;
+
+}
+.shimmer{
+    background-color: rgb(209, 207, 207);
+    height: 3rem;
+}
+.shimmer-card-container{
+    padding:2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.shimmer-card{
+    padding: 0.3rem;
+    width: 16rem;
+    height: 20rem;
+    border-radius: 1.4rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+    margin: 2rem;
+    background-color:  rgb(209, 207, 207);
+}

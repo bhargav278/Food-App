@@ -1,0 +1,37 @@
+.top-pick-card{
+    width: 15rem;
+    height: 15rem;
+    /* border : 2px solid red; */
+    margin: 2rem;
+    position: relative;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.top-pick-details{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-color: transparent;
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+
+}
+.top-pick-details h5{
+    background: transparent;
+    color: white;
+    /* border: 1px solid black; */
+    margin: auto 0;
+}
+.top-pick-details button{
+    padding: 0.3rem 1rem;
+    background-color: white;
+    color: rgb(0, 184, 0);
+    font-weight: 700;
+    width: 5rem;
+    border-radius: 0.5rem;
+    border: 0;
+}

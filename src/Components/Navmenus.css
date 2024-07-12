@@ -1,0 +1,37 @@
+.nav-menu{
+    display: flex;
+    /* border: 2px solid black; */
+    width: 70%;
+    justify-content: space-between;
+    background-color: white;
+}
+.nav-menu ul{
+    margin:auto 0;
+    display: flex;
+    list-style: none;
+    /* border: 2px solid green; */
+    width: 70%;
+    justify-content: space-evenly;
+    cursor: pointer;
+    background-color: white;
+
+}
+.nav-menu ul li ,i{
+    background-color: white;
+    /* border: 1px solid transparent; */
+    padding: 0.3rem 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.nav-menu ul li .link:hover{
+    color: rgb(214, 11, 11);
+    
+}
+.btn{
+    width: 8rem;
+}
+.link{
+    text-decoration: none;
+    color: black;
+    background: transparent;
+}

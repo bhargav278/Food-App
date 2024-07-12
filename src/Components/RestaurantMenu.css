@@ -1,0 +1,26 @@
+.res-menu-container{
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: center;
+
+}
+.title h4{
+    font-weight: bolder;
+}
+.sub-div{
+    width: 50%;
+    /* border: 2px solid red; */
+}
+.details{
+    padding: 1rem;
+    line-height: 2rem;
+    margin:2rem 0;
+    border-radius: 1rem;
+    box-shadow: grey 6px 2px 16px 0px, grey -6px -2px 16px 0px;
+}
+.top-pics-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}

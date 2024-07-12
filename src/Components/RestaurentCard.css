@@ -1,0 +1,31 @@
+.restaurent-card{
+    /* background-color: white; */
+    padding: 0.3rem;
+    width: 16rem;
+    border-radius: 1.4rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+    margin: 2rem;
+    height: 100%;
+
+}
+.restaurent-card:hover{
+    /* border: 1px solid grey; */
+    transform: scale(1.05);
+    transition: 0.2s;
+    box-shadow: grey 6px 2px 16px 0px, grey -6px -2px 16px 0px;
+    
+}
+.restaurent-card img{
+    width: 100%;
+    
+    height: 150px;
+    border-radius:inherit ;
+}
+.cuisines{
+    color: grey;
+    font-weight: 500;
+}
+.font-weight{
+    font-weight: 500;
+}
