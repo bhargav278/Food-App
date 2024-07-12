@@ -1,14 +1,14 @@
 .res-menu-container{
     /* border: 2px solid black; */
     display: flex;
-    justify-content: center;
+
 
 }
 .title h4{
     font-weight: bolder;
 }
 .sub-div{
-    width: 50%;
+    width: 75% !important;
     /* border: 2px solid red; */
 }
 .details{
@@ -23,4 +23,10 @@
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
+    width: 100%;
+}
+@media only screen and (max-width: 700px){
+    .sub-div{
+        width: 95% !important;
+    }
 }

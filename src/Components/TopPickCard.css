@@ -35,3 +35,6 @@
     border-radius: 0.5rem;
     border: 0;
 }
+.top-pick-details button:hover{
+    background-color: rgb(212, 209, 209);
+}

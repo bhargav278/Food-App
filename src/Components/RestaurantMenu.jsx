@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import './RestaurantMenu.css'
 import ShimmerRestaurantMenu from './ShimmerRestaureantMenu';
 import TopPickCard from './TopPickCard';
+import CardCategories from './CardCategories';
 
 
 
@@ -13,6 +14,7 @@ function RestaurantMenu() {
 
     const [resData, setResData] = useState([]);
     const [topPicks, setTopPicks] = useState([]);
+    const [cardCategories, setcardCategories] = useState([]);
 
     const {resId} = useParams();
     
@@ -25,8 +27,9 @@ function RestaurantMenu() {
     
         
         setResData(data);
-        console.log(data)
+        // console.log(data[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards)
         setTopPicks(data[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.carousel);
+        setcardCategories(data[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards)
     
     }
 
@@ -64,8 +67,8 @@ function RestaurantMenu() {
                 </div>
 
                 <div className="search-section m-4 mt-5 mb-2 row">
-                    <input className='col-12 ms-auto me-5 bg-white border-0 p-2 my-1' type="text" placeholder='Search any Food or Restaurent' />
-                    <button className='btn btn-secondary col-2 ms-auto my-1'>Search</button>
+                    <input className='col-sm-12 col-md-8 ms-auto ms-md-1 me-5 me-md-0 bg-white border-0 p-2 my-1' type="text" placeholder='Search any Food or Restaurent' />
+                    <button className='btn btn-secondary col-1 ms-auto my-1'>Search</button>
                 </div>
 
                 <div className="filter-buttons d-flex justify-content-center gap-3 my-5">
@@ -88,16 +91,16 @@ function RestaurantMenu() {
                                     topPicks.map((menu) => <TopPickCard key={menu?.dish?.info?.id }  topCardData={menu} />)
                                 }
                             </div>
+                            <hr />
                         </>
                         :
                         <></>
-
                 }
-                
-
-
-                
-                
+                <div className="category-container">
+                {
+                    cardCategories.map((card,index) => <CardCategories key={index} data={card?.card?.card } />)
+                }
+                </div>
             </div>
         </div>
     )
