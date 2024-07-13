@@ -42,7 +42,6 @@
     background-color: white;
     color: rgb(0, 184, 0);
     font-weight: 700;
-    width: 5rem;
     border-radius: 0.5rem;
     border: 1px solid rgb(172, 171, 171);
     position: absolute;
@@ -56,4 +55,27 @@
     font-weight: 500;
     font-size: 1.3rem;
     margin: 0.5rem 0;
+}
+
+@media only screen and (max-width: 800px){
+    .sub-category-card{
+        flex-direction: column;
+    }
+    .sub-card-image{
+
+        width: 40%;
+        height: 10rem;
+    }
+}
+@media only screen and (max-width: 575px){
+    .sub-category-card{
+        padding: 0.5rem 0;
+
+    }
+
+    .sub-card-image{
+
+        width: 60%;
+        height: 10rem;
+    }
 }

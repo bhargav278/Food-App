@@ -36,7 +36,7 @@ function RestaurantMenu() {
     useEffect(() => {
         fetchMenuData();
     }, [])
-    
+
     let info = resData[2]?.card?.card?.info;
 
 
