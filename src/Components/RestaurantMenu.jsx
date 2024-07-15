@@ -6,43 +6,29 @@ import './RestaurantMenu.css'
 import ShimmerRestaurantMenu from './ShimmerRestaureantMenu';
 import TopPickCard from './TopPickCard';
 import CardCategories from './CardCategories';
+import useResMenu from '../utils/useResMenu';
 
 
 
 
 function RestaurantMenu() {
 
-    const [resData, setResData] = useState([]);
+    // const [resData, setResData] = useState([]);
     const [topPicks, setTopPicks] = useState([]);
     const [cardCategories, setcardCategories] = useState([]);
 
-    const {resId} = useParams();
+    const { resId } = useParams();
     
-    async function fetchMenuData() {
-        const fetchedData = await fetch(`https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=22.3038945&lng=70.80215989999999&restaurantId=${resId}`);
-    
-        const resData = await fetchedData.json();
-
-        const data = resData?.data?.cards;
-    
-        
-        setResData(data);
-        // console.log(data[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards)
-        setTopPicks(data[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.carousel);
-        setcardCategories(data[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards)
-    
-    }
+    const resData = useResMenu(resId);
 
     useEffect(() => {
-        fetchMenuData();
-    }, [])
-
+        setTopPicks(resData[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.carousel);
+        setcardCategories(resData[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards)
+    },[resData])
+    
     let info = resData[2]?.card?.card?.info;
 
-
-   
-
-
+    // console.log(info);
     return (resData.length==0) ? <ShimmerRestaurantMenu/> : (
         <div className="res-menu-container">
             <div className="sub-div">
@@ -97,8 +83,9 @@ function RestaurantMenu() {
                         <></>
                 }
                 <div className="category-container">
-                {
-                    cardCategories.map((card,index) => <CardCategories key={index} data={card?.card?.card } />)
+                    {
+                        cardCategories ?
+                    cardCategories.map((card,index) => <CardCategories key={index} data={card?.card?.card } />) :<></>
                 }
                 </div>
             </div>

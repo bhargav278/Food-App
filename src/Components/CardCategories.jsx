@@ -9,7 +9,7 @@ function CardCategories({ data }) {
 
     // console.log(categoryData)
 
-    let cardContainer = document.getElementsByClassName("category-sub-cards");
+
     
     return (categoryData) ? (
         <div className="category-card">
