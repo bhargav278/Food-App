@@ -4,6 +4,8 @@ import RestaurentContainer from './ReataurentContainer'
 import './MainSection.css'
 import './Search.css'
 import Shimmer from './Shimmer'
+import useOnlineStatus from '../utils/useOnlineStatus'
+import Offline from './Offline'
 
 
 
@@ -47,7 +49,11 @@ function Main() {
   }
 
   
-  
+  const status = useOnlineStatus();
+
+  if (status === false) { 
+    return (<Offline></Offline>)
+  }
 
   return (restaurents.length===0) ? <Shimmer/> : (
       <div className="main-section">
