@@ -10,7 +10,7 @@ import Offline from './Offline'
 
 
 function Main() {
-
+  
   const [restaurents, setRestaurents] = useState([]);
   const [filteredRestaurents, setFilteredRestaurents] = useState(restaurents);
   const [searchRestaurant, setSearchRestaurent] = useState("");
@@ -25,6 +25,7 @@ function Main() {
 
     const resData = data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
 
+    // console.log(resData);
     setRestaurents(resData);
     setFilteredRestaurents(resData);
 
@@ -81,7 +82,7 @@ function Main() {
         <button onClick={filterRestaurent} className='btn btn-success w-auto p-2 mx-2 ms-auto my-3'>Top Restaurents</button>
         <button onClick={allRestaurent} className='btn btn-success w-auto p-2 mx-2 me-auto  my-3'>All Restaurents</button>
       </div>
-      <div className="title mt-4 "><h3 className='ps-5 mx-5 py-2 text-danger bg-white'>{title}</h3></div>
+      <div className="title mt-4"><h1 className='ps-5 mx-5 py-2 text-danger bg-white text-3xl font-medium'>{title}</h1></div>
       <RestaurentContainer restaurents={filteredRestaurents} />
       </div>
   )

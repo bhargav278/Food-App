@@ -11,8 +11,8 @@
 }
 .restaurent-card:hover{
     /* border: 1px solid grey; */
-    transform: scale(1.05);
-    transition: 0.2s;
+    /* transform: scale(1.05); */
+    /* transition: 0.2s; */
     box-shadow: grey 6px 2px 16px 0px, grey -6px -2px 16px 0px;
     
 }

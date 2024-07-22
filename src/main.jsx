@@ -7,6 +7,7 @@ import MainSection from './Components/MainSection.jsx'
 import ContactUs from './Components/ContactUs.jsx'
 import Error from './Components/Error.jsx'
 import RestaurantMenu from './Components/RestaurantMenu.jsx'
+import './App.css'
 
 
 const AppRoute = createBrowserRouter([

@@ -3,13 +3,13 @@
 function SubCategoryCard({ detailedData }) {
     
     
-    console.log(detailedData)
+    // console.log(detailedData)
     
     return (detailedData) ? (
         <div className="sub-category-card">
             <div className="card-details">
                 <div className="check-veg text-success">
-                    {detailedData.itemAttribute.vegClassifier}  <span className="bg-white text-danger ms-2 p-1"> {<u className="py-1 px-3 rounded-4 bg-white" >{detailedData.ribbon.text}</u> || <> </>}</span>
+                    {(detailedData.itemAttribute) ? <>{detailedData.itemAttribute.vegClassifier }</> : <></>}  <span className="bg-white text-danger ms-2 p-1"> {<u className="py-1 px-3 rounded-4 bg-white" >{detailedData.ribbon.text}</u> || <> </>}</span>
                 </div>
                 <div className="sub-name">
                     {detailedData.name}
