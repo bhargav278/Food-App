@@ -1,19 +1,6 @@
-//https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/FOOD_CATALOG/IMAGES/CMS/2024/5/28/d76f21d7-8334-4281-b4e6-6a97203f8b46_8725adb6-aa28-479f-bdf5-5e6dd32e0ee0.png
-import { addItem } from "../utils/cartSlice"
-import { useDispatch } from "react-redux"
+function CartItem({detailedData}) {
 
-function SubCategoryCard({ detailedData }) {
 
-    const dispatch = useDispatch();
-
-    function handleAdd(item) {
-        //add in store
-        dispatch(addItem(item));
-    }
-    
-    
-    // console.log(detailedData)
-    
     return (detailedData) ? (
         <div className="sub-category-card">
             <div className="card-details">
@@ -45,12 +32,10 @@ function SubCategoryCard({ detailedData }) {
                     <img src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/${detailedData.imageId}`} alt="No image" />:<></>
                 }
                 
-                <button
-                onClick={()=>{handleAdd(detailedData)}}
-                >ADD</button>
+                <button style={{marginLeft:"-1rem"}}>Remove</button>
             </div>
         </div>
     ):<></>
 }
 
-export default SubCategoryCard
+export default CartItem

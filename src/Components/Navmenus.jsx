@@ -3,6 +3,8 @@ import './Navmenus.css'
 import {useState} from 'react'
 import { Link } from 'react-router-dom';
 import useOnlineStatus from '../utils/useOnlineStatus';
+import { useSelector } from 'react-redux';
+
 
 function Navmenus() {
 
@@ -11,6 +13,11 @@ function Navmenus() {
     function authentication() {
         (authenticate === "Login") ? setAuthenticate("Logout") : setAuthenticate("Login");
     }
+
+    const items = useSelector((store) => store.cart.items)
+    console.log(items);
+    
+
 
     let status = useOnlineStatus();
     return (
@@ -22,7 +29,7 @@ function Navmenus() {
                     <li><Link to="/" className='link'>Home</Link></li>
                     <li><Link to="/about" className='link'>About</Link></li>
                     <li><Link to="/contact" className='link'>Contact us</Link></li>
-                    <li><Link className='link'><i className="fa-solid fa-cart-shopping" ></i> Cart</Link></li>
+                    <li><Link to={"/cart"} className='link'><i className="fa-solid fa-cart-shopping" ></i> (<span className='bg-white text-danger'>{ items.length}</span>)</Link></li>
               </ul>
                 <button onClick={authentication} className='btn btn-outline-danger  me-5 px-4 font-weight-bold'>{authenticate}</button>
           </div>

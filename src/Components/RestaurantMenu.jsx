@@ -1,13 +1,13 @@
 
 // https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=22.3038945&lng=70.80215989999999&restaurantId=74052&catalog_qa=undefined&submitAction=ENTER
-import { useEffect, useState } from 'react'
+import { useEffect, useState ,useContext } from 'react'
 import { useParams } from 'react-router-dom';
 import './RestaurantMenu.css'
 import ShimmerRestaurantMenu from './ShimmerRestaureantMenu';
 import TopPickCard from './TopPickCard';
 import CardCategories from './CardCategories';
 import useResMenu from '../utils/useResMenu';
-
+import VegClassificationContext from './VegClassificationContext';
 
 
 
@@ -16,14 +16,23 @@ function RestaurantMenu() {
     // const [resData, setResData] = useState([]);
     const [topPicks, setTopPicks] = useState([]);
     const [cardCategories, setcardCategories] = useState([]);
+    const [vegCheck, setVegCheck] = useState("all");
 
     const { resId } = useParams();
     
     const resData = useResMenu(resId);
 
+    // console.log(vegCheck)
+    // const { category } = useContext(VegClassificationContext);
+    // console.log(cardCategories);
+
     useEffect(() => {
         setTopPicks(resData[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.carousel);
+
+        const cardCategory = resData[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards; 
+
         setcardCategories(resData[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards)
+
     },[resData])
     
     let info = resData[2]?.card?.card?.info;
@@ -58,8 +67,14 @@ function RestaurantMenu() {
                 </div>
 
                 <div className="filter-buttons d-flex justify-content-center gap-3 my-5">
-                    <button className=' btn btn-success'>Veg</button>
-                    <button className=' btn btn-danger'>Non-Veg</button>
+                    <button className=' btn btn-success'
+                    onClick={()=>{setVegCheck("VEG")}}
+                    >Veg</button>
+                    <button className=' btn btn-danger'
+                        onClick={() => {
+                        setVegCheck("NONVEG")
+                    }}
+                    >Non-Veg</button>
                     <button className='btn btn-primary'>best Seller</button>
                 </div>
 
@@ -82,12 +97,14 @@ function RestaurantMenu() {
                         :
                         <></>
                 }
+                <VegClassificationContext.Provider value={{category:vegCheck}}>
                 <div className="category-container">
                     {
                         cardCategories ?
                     cardCategories.map((card,index) => <CardCategories key={index} data={card?.card?.card } />) :<></>
                 }
                 </div>
+                </VegClassificationContext.Provider>
             </div>
         </div>
     )

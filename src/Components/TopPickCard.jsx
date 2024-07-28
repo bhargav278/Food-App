@@ -4,6 +4,7 @@ import './TopPickCard.css'
 function TopPickCard({ topCardData }) {
 
 
+    // console.log(topCardData)
     let imgId = topCardData?.creativeId;
 
     let styles = {
@@ -14,8 +15,12 @@ function TopPickCard({ topCardData }) {
       <div style={styles} className='top-pick-card'>
     
           <div className='top-pick-details' >
-              <h5>&#8377; { topCardData?.dish?.info?.price/100 || topCardData?.dish?.info?.defaultPrice/100}</h5>
-              <button>ADD</button>
+              <h5>&#8377; { topCardData?.dish?.info?.price/100 || topCardData?.dish?.info?.defaultPrice/100 || 0}</h5>
+              
+                  {
+                      (topCardData?.dish?.info?.price/100 || topCardData?.dish?.info?.defaultPrice/100)?<button>Add</button> : <></>
+                  }
+        
           </div>
     </div>
   )
