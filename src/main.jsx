@@ -19,23 +19,23 @@ const AppRoute = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "/",
+        path: "/Food-App",
         element: <MainSection />
       },
       {
-        path: "/about",
+        path: "/Food-App/about",
         element: <About />
       },
       {
-        path: "/contact",
+        path: "/Food-App/contact",
         element: <ContactUs />
       },
       {
-        path: "/restaurants/:resId",
+        path: "/Food-App/restaurants/:resId",
         element: <RestaurantMenu />
       },
       {
-        path: "/cart",
+        path: "/Food-App/cart",
         element: <Cart />
 
       }

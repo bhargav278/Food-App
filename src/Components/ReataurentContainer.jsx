@@ -12,7 +12,7 @@ function ReataurentContainer({ restaurents }) {
     <div className='restaurent-container'>
       {
         
-        restaurents.map((restaurent) => <Link key={restaurent?.info?.id} to={"/restaurants/" + restaurent?.info?.id} className='link relative'>
+        restaurents.map((restaurent) => <Link key={restaurent?.info?.id} to={"/Food-App/restaurants/" + restaurent?.info?.id} className='link relative'>
           {/* (res.info.veg) ? resCard  : EnhancedRescard*/
             (restaurent?.info?.veg) ? <RestaurentCard data={restaurent?.info} />: <NonVegLabeledRestaurentCard data={restaurent?.info}/>
           

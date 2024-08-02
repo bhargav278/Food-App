@@ -26,10 +26,10 @@ function Navmenus() {
           <div className='nav-menu'>
                 <ul>
                     <li>Status : {(status)?"💹(online)":"🔴(offline)" }</li>
-                    <li><Link to="/" className='link'>Home</Link></li>
-                    <li><Link to="/about" className='link'>About</Link></li>
-                    <li><Link to="/contact" className='link'>Contact us</Link></li>
-                    <li><Link to={"/cart"} className='link'><i className="fa-solid fa-cart-shopping" ></i> (<span className='bg-white text-danger'>{ items.length}</span>)</Link></li>
+                    <li><Link to="/Food-App/" className='link'>Home</Link></li>
+                    <li><Link to="/Food-App/about" className='link'>About</Link></li>
+                    <li><Link to="/Food-App/contact" className='link'>Contact us</Link></li>
+                    <li><Link to={"/Food-App/cart"} className='link'><i className="fa-solid fa-cart-shopping" ></i> (<span className='bg-white text-danger'>{ items.length}</span>)</Link></li>
               </ul>
                 <button onClick={authentication} className='btn btn-outline-danger  me-5 px-4 font-weight-bold'>{authenticate}</button>
           </div>
