@@ -15,7 +15,7 @@ function Cart() {
 
 
     const items = useSelector((store) => store.cart.items)
-    console.log(items)
+    // console.log(items)
   return (
     <div className="w-8/12 mx-auto">
           <h1 className="font-bold text-center m-3  text-2xl ">Cart</h1>

@@ -15,7 +15,7 @@ function Navmenus() {
     }
 
     const items = useSelector((store) => store.cart.items)
-    console.log(items);
+    // console.log(items);
     
 
 

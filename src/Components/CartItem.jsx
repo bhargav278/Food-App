@@ -1,4 +1,13 @@
-function CartItem({detailedData}) {
+import { remove } from "../utils/cartSlice"
+import { useDispatch } from "react-redux"
+
+function CartItem({ detailedData }) {
+
+    const dispatch = useDispatch();
+
+    function handleremove(item) {
+        dispatch(remove(item));
+    }
 
 
     return (detailedData) ? (
@@ -32,7 +41,7 @@ function CartItem({detailedData}) {
                     <img src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/${detailedData.imageId}`} alt="No image" />:<></>
                 }
                 
-                <button style={{marginLeft:"-1rem"}}>Remove</button>
+                <button style={{marginLeft:"-1rem"}} onClick={()=>handleremove(detailedData)}>Remove</button>
             </div>
         </div>
     ):<></>

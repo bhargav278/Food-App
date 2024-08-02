@@ -7,7 +7,7 @@ const NonVegLabeledRestaurentCard = NonVegClassified(RestaurentCard);
 
 
 function ReataurentContainer({ restaurents }) {
-  console.log(restaurents)
+  // console.log(restaurents)
   return (
     <div className='restaurent-container'>
       {
