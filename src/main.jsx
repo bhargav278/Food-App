@@ -20,23 +20,28 @@ const AppRoute = createBrowserRouter([
     children: [
       {
         path: "/Food-App",
-        element: <MainSection />
+        element: <MainSection />,
+        errorElement:<Error/>
       },
       {
         path: "/Food-App/about",
-        element: <About />
+        element: <About />,
+        errorElement:<Error/>
       },
       {
         path: "/Food-App/contact",
-        element: <ContactUs />
+        element: <ContactUs />,
+        errorElement:<Error/>
       },
       {
         path: "/Food-App/restaurants/:resId",
-        element: <RestaurantMenu />
+        element: <RestaurantMenu />,
+        errorElement:<Error/>
       },
       {
         path: "/Food-App/cart",
-        element: <Cart />
+        element: <Cart />,
+        errorElement:<Error/>
 
       }
     ],
