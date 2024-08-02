@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
-import { createBrowserRouter , RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import About from './Components/About.jsx'
 import MainSection from './Components/MainSection.jsx'
 import ContactUs from './Components/ContactUs.jsx'
@@ -15,34 +15,34 @@ import Cart from './Components/Cart.jsx'
 
 const AppRoute = createBrowserRouter([
   {
-    path: "/",
+    path: "/Food-App",
     element: <App />,
     children: [
       {
         path: "/",
-        element:<MainSection/>
+        element: <MainSection />
       },
       {
         path: "/about",
-        element:<About/>
+        element: <About />
       },
       {
         path: "/contact",
-        element:<ContactUs/>
+        element: <ContactUs />
       },
       {
         path: "/restaurants/:resId",
-        element:<RestaurantMenu/>
+        element: <RestaurantMenu />
       },
       {
         path: "/cart",
-        element:<Cart/>
-        
+        element: <Cart />
+
       }
     ],
-    errorElement:<Error/>
+    errorElement: <Error />
   },
-  
+
 ])
 
 
